@@ -1,21 +1,16 @@
-# lib/shoe.py
+
 
 class Shoe:
     def __init__(self, brand, size):
         self.brand = brand
         self.size = size
-        self.color = None
-        self.material = None
-        self.condition = "New"
+        
 
     def get_brand(self):
         return self._brand
 
     def set_brand(self, value):
-        if isinstance(value, str):
-            self._brand = value
-        else:
-            raise TypeError("Brand must be a string")
+        self._brand = value
 
     brand = property(get_brand, set_brand)
 
@@ -23,10 +18,10 @@ class Shoe:
         return self._size
 
     def set_size(self, value):
-        if isinstance(value, (int, float)):
+        if type(value) in (int, float):
             self._size = value
         else:
-            raise TypeError("size must be a number")
+            print("size must be a number")
 
     size = property(get_size, set_size)
 
@@ -34,10 +29,7 @@ class Shoe:
         return self._color
 
     def set_color(self, value):
-        if isinstance(value, str):
-            self._color = value
-        else:
-            raise TypeError("color must be a string")
+        self._color = value
 
     color = property(get_color, set_color)
 
@@ -45,10 +37,7 @@ class Shoe:
         return self._material
 
     def set_material(self, value):
-        if isinstance(value, str):
-            self._material = value
-        else:
-            raise TypeError("material must be a string")
+        self._material = value
 
     material = property(get_material, set_material)
 
@@ -56,10 +45,7 @@ class Shoe:
         return self._condition
 
     def set_condition(self, value):
-        if isinstance(value, str):
-            self._condition = value
-        else:
-            raise TypeError("condition must be a string")
+        self._condition = value
 
     condition = property(get_condition, set_condition)
 
